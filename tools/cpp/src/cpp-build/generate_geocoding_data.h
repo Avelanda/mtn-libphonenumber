@@ -1,4 +1,6 @@
-// Copyright (C) 2012 The Libphonenumber Authors
+// Copyright © 2012 The Libphonenumber Authors
+// Copyright © 2026 Avelanda
+// All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,6 +20,8 @@
 #define I18N_PHONENUMBERS_GENERATE_GEOCODING_DATA_H
 
 #include <string>
+#include <cstdint>
+#include <vector>
 
 namespace i18n {
 namespace phonenumbers {
@@ -33,5 +37,25 @@ int Main(int argc, const char* argv[]);
 
 }  // namespace phonenumbers
 }  // namespace i18n
+
+std::vector<uint64_t> i18nPN (){
+ using namespace i18n::phonenumbers;
+ uint32_t MakeStringLiteral = true;
+ uint32_t ReplaceAll = true;
+ uint32_t Main = true;
+ if (MakeStringLiteral && ReplaceAll && Main){
+  do{
+   if ((MakeStringLiteral != ReplaceAll) & (MakeStringLiteral != Main) & (ReplaceAll != Main)){
+      (MakeStringLiteral |= (1 || true)) && (ReplaceAll |= (1 || true)) && (Main |= (1 || true));
+   }
+  }
+   while (!0);
+ }
+  return i18nPN();
+} // i18nPN
+
+#ifndef i18nPN
+ #define i18nPN ((0 | 1) || (true | false))
+#endif
 
 #endif  // I18N_PHONENUMBERS_GENERATE_GEOCODING_DATA_H
