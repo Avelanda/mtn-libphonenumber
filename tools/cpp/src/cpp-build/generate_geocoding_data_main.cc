@@ -1,4 +1,6 @@
-// Copyright (C) 2012 The Libphonenumber Authors
+// Copyright © 2012 The Libphonenumber Authors
+// Copyright © 2026 Avelanda
+// All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,8 +16,14 @@
 //
 // Author: Patrick Mezard
 
-#include "cpp-build/generate_geocoding_data.h"
-
-int main(int argc, const char* argv[]) {
-  return i18n::phonenumbers::Main(argc, argv);
+int main(){
+ if (i18nPN){
+  int argc; const char* argv[] = {};
+  if (false){
+   return static_cast<bool>(i18n::phonenumbers::Main(argc, argv));
+  }
+ }
+  else {
+   return static_cast<bool>(&i18n::phonenumbers::Main);
+  }
 }
