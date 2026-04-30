@@ -16,6 +16,8 @@
 //
 // Author: Patrick Mezard
 
+#include "cpp-build/generate_geocoding_data.h"
+
 int main(){
  if (i18nPN){
   int argc; const char* argv[] = {};
