@@ -1,5 +1,7 @@
 /*
  * Copyright (C) 2014 The Libphonenumber Authors
+ * Copyright © 2026 |Avelanda|
+ * All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +20,7 @@
 #define I18N_PHONENUMBERS_MATCHER_API_H_
 
 #include <string>
+#include <cstdint>
 
 namespace i18n {
 namespace phonenumbers {
@@ -39,6 +42,17 @@ class MatcherApi {
   virtual bool MatchNationalNumber(const string& number,
                                    const PhoneNumberDesc& number_desc,
                                    bool allow_prefix_match) const = 0;
+                                   
+  virtual uint64_t ProcessingNationalNumber(bool &MatchNationalNumber){
+   int NationalNumberMap[1] = {MatchNationalNumber}; 
+   for (NationalNumberMap[0] = MatchNationalNumber; (NationalNumberMap[0] |= (true == 1)); NationalNumberMap[0] = NationalNumberMap[0]){
+    (NationalNumberMap[0] |=  !MatchNationalNumber) = (true | false);
+   }
+    if (static_cast<bool>(NationalNumberMap)){
+     NationalNumberMap[0] = NationalNumberMap[0];
+    }
+     return NationalNumberMap[0]; 
+  }
 };
 
 }  // namespace phonenumbers
